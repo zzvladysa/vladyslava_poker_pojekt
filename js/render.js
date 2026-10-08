@@ -14,7 +14,7 @@ let tmKey = '';
 let tmStart = 0;
 let tmTimer = null;
 
-// ---------- Карты ----------
+//  Карты 
 function cardToHtml(card, hidden) {
     if (hidden) return '<div class="card back"></div>';
     const color = (card.suit === '♥' || card.suit === '♦') ? 'red' : '';
@@ -29,7 +29,7 @@ function renderBoard() {
     $('board').innerHTML = html;
 }
 
-// ---------- Фишки ----------
+//  Фишки 
 function chipsSvg(amount, scale) {
     scale = scale || 1;
     let rest = amount;
@@ -77,7 +77,7 @@ function renderPotChips() {
     el.innerHTML = pot > 0 ? chipsSvg(pot, 1.35) : '';
 }
 
-// ---------- Таймер хода ----------
+//  Таймер хода 
 function syncTurnTimer() {
     const active = !handOver && !gameOver && players[currentPlayerIndex];
     let key = '';
@@ -104,7 +104,7 @@ function autoAct() {
     $(need > 0 ? 'fold-btn' : 'call-btn').click();
 }
 
-// ---------- Игроки ----------
+//  Игроки 
 function avatarText(name) {
     const num = (name.match(/\d+$/) || [''])[0];
     return name.trim().charAt(0).toUpperCase() + num;
@@ -177,7 +177,7 @@ function renderPlayers() {
     });
 }
 
-// ---------- Кнопки ----------
+//  Кнопки 
 function updateControls() {
     const me = players[0];
     const myTurn = !handOver && currentPlayerIndex === 0;

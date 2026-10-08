@@ -1,6 +1,6 @@
 // script.js — запуск игры и обработчики событий
 console.log('script.js geladen');
-// ---------- Запуск и события ----------
+//  Запуск и события 
 function startGame() {
     gameOver = false;
     readSettings();

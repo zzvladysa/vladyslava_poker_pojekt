@@ -1,4 +1,4 @@
-// ===== player.js: класс игрока =====
+//  player.js: класс игрока 
 class Player {
     constructor(id, stack) {
         this.id = id;

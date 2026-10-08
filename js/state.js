@@ -6,7 +6,7 @@ const setupScreen = $('setup-screen');
 const gameScreen = $('game-screen');
 const startBtn = $('start-btn');
 
-// ---------- Состояние ----------
+//  Состояние 
 const settings = { playersCount: 4, stack: 1000, bigBlind: 20 };
 let players = [];
 let deck = null;
@@ -24,7 +24,7 @@ let showAllCards = false;
 let handCounter = 0;            // номер раздачи (отсекает старые таймеры ботов)
 let sliderKey = '';
 
-// ---------- Игроки ----------
+//  Игроки 
 function readSettings() {
     settings.playersCount = Number($('set-players').value);
     settings.stack = Number($('set-stack').value);

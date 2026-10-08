@@ -63,7 +63,7 @@
         timers = [];
     }
 
-    // ---------- Колода ----------
+    //  Колода 
     function buildShoe() {
         shoe = [];
         for (let d = 0; d < DECKS; d++) {
@@ -97,7 +97,7 @@
         return hand.length === 2 && score(hand).total === 21;
     }
 
-    // ---------- Ставки ----------
+    //  Ставки 
     function addBet(v) {
         if (phase !== 'bet' || balance - bet < v) return;
         bet += v;
@@ -110,7 +110,7 @@
         render();
     }
 
-    // ---------- Раунд ----------
+    //  Раунд 
     function deal() {
         if (phase !== 'bet' || bet <= 0) return;
         if (shoe.length < 52) buildShoe();
@@ -217,7 +217,7 @@
         render();
     }
 
-    // ---------- Отрисовка ----------
+    //  Отрисовка 
     function cardHtml(c, hidden) {
         const fresh = c.fresh ? ' deal' : '';
         if (hidden) return `<div class="card back${fresh}"></div>`;
@@ -280,7 +280,7 @@
         dealer.concat(player).forEach(c => { c.fresh = false; });
     }
 
-    // ---------- Вход и выход ----------
+    //  Вход и выход 
     function init() {
         const box = $b('bj-chips');
         box.innerHTML = CHIPS.map(v =>
