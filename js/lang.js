@@ -33,6 +33,7 @@ const translations = {
         continueBtn: 'Weiter',
         toMenu: 'Zum Hauptmenü',
         menu: '← Menü',
+        mainMenu: '← Hauptmenü',
         yes: 'Ja',
         cancel: 'Abbrechen',
         confirmMenu: 'Zurück zum Menü? Die laufende Hand geht verloren.',
@@ -52,8 +53,7 @@ const translations = {
         hQuads: 'Vierling {0}', hStraightFlush: 'Straight Flush bis {0}', hRoyal: 'Royal Flush',
         rankSing: ['Zwei', 'Drei', 'Vier', 'Fünf', 'Sechs', 'Sieben', 'Acht', 'Neun', 'Zehn', 'Bube', 'Dame', 'König', 'Ass'],
         rankGen: ['Zwei', 'Drei', 'Vier', 'Fünf', 'Sechs', 'Sieben', 'Acht', 'Neun', 'Zehn', 'Bube', 'Dame', 'König', 'Ass'],
-        rankPlur: ['Zweier', 'Dreier', 'Vierer', 'Fünfer', 'Sechser', 'Siebener', 'Achter', 'Neuner', 'Zehner', 'Buben', 'Damen', 'Könige', 'Asse'],
-        mainMenu: '← Hauptmenü',
+        rankPlur: ['Zweier', 'Dreier', 'Vierer', 'Fünfer', 'Sechser', 'Siebener', 'Achter', 'Neuner', 'Zehner', 'Buben', 'Damen', 'Könige', 'Asse']
     },
     ru: {
         setLang: 'Язык:',
@@ -89,6 +89,7 @@ const translations = {
         continueBtn: 'Продолжить',
         toMenu: 'В главное меню',
         menu: '← Меню',
+        mainMenu: '← Главное меню',
         yes: 'Да',
         cancel: 'Отмена',
         confirmMenu: 'Вернуться в меню? Текущая раздача будет потеряна.',
@@ -108,8 +109,7 @@ const translations = {
         hQuads: 'Каре {0}', hStraightFlush: 'Стрит-флеш до {0}', hRoyal: 'Роял-флеш',
         rankSing: ['двойка', 'тройка', 'четвёрка', 'пятёрка', 'шестёрка', 'семёрка', 'восьмёрка', 'девятка', 'десятка', 'валет', 'дама', 'король', 'туз'],
         rankGen: ['двойки', 'тройки', 'четвёрки', 'пятёрки', 'шестёрки', 'семёрки', 'восьмёрки', 'девятки', 'десятки', 'валета', 'дамы', 'короля', 'туза'],
-        rankPlur: ['двоек', 'троек', 'четвёрок', 'пятёрок', 'шестёрок', 'семёрок', 'восьмёрок', 'девяток', 'десяток', 'валетов', 'дам', 'королей', 'тузов'],
-        mainMenu: '← Главное меню',
+        rankPlur: ['двоек', 'троек', 'четвёрок', 'пятёрок', 'шестёрок', 'семёрок', 'восьмёрок', 'девяток', 'десяток', 'валетов', 'дам', 'королей', 'тузов']
     },
     en: {
         setLang: 'Language:',
@@ -145,6 +145,7 @@ const translations = {
         continueBtn: 'Continue',
         toMenu: 'To main menu',
         menu: '← Menu',
+        mainMenu: '← Main menu',
         yes: 'Yes',
         cancel: 'Cancel',
         confirmMenu: 'Back to the menu? The current hand will be lost.',
@@ -164,8 +165,7 @@ const translations = {
         hQuads: 'Four of a kind, {0}', hStraightFlush: '{0}-high straight flush', hRoyal: 'Royal flush',
         rankSing: ['Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace'],
         rankGen: ['Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace'],
-        rankPlur: ['Twos', 'Threes', 'Fours', 'Fives', 'Sixes', 'Sevens', 'Eights', 'Nines', 'Tens', 'Jacks', 'Queens', 'Kings', 'Aces'],
-        mainMenu: '← Main menu',
+        rankPlur: ['Twos', 'Threes', 'Fours', 'Fives', 'Sixes', 'Sevens', 'Eights', 'Nines', 'Tens', 'Jacks', 'Queens', 'Kings', 'Aces']
     }
 };
 

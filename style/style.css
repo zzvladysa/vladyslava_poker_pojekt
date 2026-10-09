@@ -54,7 +54,6 @@ body::after {
 }
 
 /* игра: чёрный фон */
-/* игра: чёрный фон */
 /* игра: зал */
 body:has(#game-screen:not(.hidden))::before,
 body:has(#bj-screen:not(.hidden))::before {
@@ -83,6 +82,7 @@ body:has(#bj-screen:not(.hidden))::after {
     rgba(0, 0, 0, 0.75) 100%
   );
 }
+
 .hidden {
   display: none !important;
 }
@@ -694,7 +694,7 @@ button:disabled {
 
 #raise-btn {
   color: #1a1408;
-  background: linear-gradient(180deg, #fde7b2 0%, #f5b73b 100%);
+  background: linear-gradient(180deg, #f3d794 0%, #b48a35 100%);
 }
 
 #allin-btn,

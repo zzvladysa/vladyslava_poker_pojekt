@@ -22,10 +22,10 @@
                     <b>Poker</b>
                     <small>Texas Hold'em</small>
                 </button>
-                <button class="mode" data-mode="blackjack">
+                <button class="mode" data-mode="blackjack" disabled>
                     <span class="mode-icon red">♥</span>
                     <b>Blackjack</b>
-                    <small>21</small>
+                    <small>Bald</small>
                 </button>
             </div>
             <button id="mode-start" class="gold-btn">Start</button>
@@ -124,52 +124,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- БЛЭКДЖЕК -->
-        <section id="bj-screen" class="hidden">
-            <div id="bj-topbar">
-                <button id="bj-menu" type="button">← Hauptmenü</button>
-                <div id="bj-balance"></div>
-                <select id="bj-lang">
-                    <option value="de">Deutsch</option>
-                    <option value="ru">Русский</option>
-                    <option value="en">English</option>
-                </select>
-            </div>
-
-            <div id="bj-table">
-                <div class="bj-area">
-                    <div class="bj-label" id="bj-dealer-label"></div>
-                    <div class="bj-hand" id="bj-dealer"></div>
-                    <div class="bj-total" id="bj-dealer-total"></div>
-                </div>
-
-                <div id="bj-center">
-                    <div id="bj-msg"></div>
-                    <div id="bj-bet"></div>
-                </div>
-
-                <div class="bj-area">
-                    <div class="bj-total" id="bj-player-total"></div>
-                    <div class="bj-hand" id="bj-player"></div>
-                    <div class="bj-label" id="bj-player-label"></div>
-                </div>
-            </div>
-
-            <div id="bj-controls">
-                <div id="bj-bet-ui">
-                    <div id="bj-chips"></div>
-                    <button id="bj-clear" type="button"></button>
-                    <button id="bj-deal" type="button" class="gold-btn"></button>
-                </div>
-                <div id="bj-play-ui" class="hidden">
-                    <button id="bj-hit" type="button" class="btn-green"></button>
-                    <button id="bj-stand" type="button" class="btn-red"></button>
-                    <button id="bj-double" type="button" class="btn-purple"></button>
-                </div>
-                <button id="bj-next" type="button" class="gold-btn hidden"></button>
-            </div>
-        </section>
     </main>
 
     <!-- Порядок важен: script.js использует функции из lang.js и deck.js -->
@@ -182,7 +136,6 @@
     <script src="js/state.js"></script>
     <script src="js/game.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/blackjack.js"></script>
     <script src="js/mode.js"></script>
 </body>
 
