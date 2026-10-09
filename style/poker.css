@@ -1,4 +1,3 @@
-/* стол */
 #poker-table {
   position: relative;
   width: min(94vw, 900px);
@@ -17,7 +16,6 @@
     inset 0 0 70px rgba(0, 0, 0, 0.28);
 }
 
-/* центр */
 #center {
   position: absolute;
   inset: 0;
@@ -54,7 +52,6 @@
   pointer-events: auto;
 }
 
-/* игроки */
 #players-container {
   position: absolute;
   inset: 0;
@@ -62,7 +59,6 @@
 }
 
 .seat {
-  pointer-events: auto;
   position: absolute;
   z-index: 3;
   transform: translate(-50%, -50%);
@@ -70,6 +66,7 @@
   text-align: center;
   font-size: 13px;
   transition: filter 0.25s ease;
+  pointer-events: auto;
 }
 
 .seat b {
@@ -92,7 +89,6 @@
   font-size: 14px;
 }
 
-/* веер */
 .seat .cards .card:first-child {
   transform: rotate(-7deg) translateX(7px);
   z-index: 1;
@@ -104,12 +100,11 @@
 }
 
 .seat .cards .card:hover {
-  transform: translateY(-5px) scale(1.05) rotate(0deg);
+  transform: translateY(-5px) scale(1.05) rotate(0);
   z-index: 10;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.55);
 }
 
-/* состояния */
 .seat.turn {
   filter: drop-shadow(0 0 8px var(--accent-soft));
 }
@@ -124,15 +119,14 @@
   color: var(--accent-light);
 }
 
-/* бейджи */
 .badge {
   display: inline-block;
-  font-size: 10px;
-  font-weight: 600;
   padding: 2px 7px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.16);
   color: var(--text);
+  font-size: 10px;
+  font-weight: 600;
 }
 
 .b-D {
@@ -143,27 +137,24 @@
 .b-SB {
   background: #5b87b0;
 }
-
 .b-BB {
   background: #b05b52;
 }
-
 .b-ALLIN {
   background: #7a68a8;
 }
 
-/* реплики */
 .bubble {
   position: absolute;
   bottom: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(240, 243, 241, 0.96);
-  color: #161a17;
   padding: 5px 12px;
   border-radius: 12px;
-  font-weight: 600;
+  background: rgba(240, 243, 241, 0.96);
+  color: #161a17;
   font-size: 13px;
+  font-weight: 600;
   white-space: nowrap;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
   z-index: 20;
@@ -185,7 +176,6 @@
   letter-spacing: 3px;
 }
 
-/* аватары */
 .seat-head {
   display: flex;
   align-items: center;
@@ -224,7 +214,6 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* таймер */
 .ring {
   position: absolute;
   inset: 0;
@@ -285,7 +274,6 @@
   }
 }
 
-/* победитель */
 .seat.winner {
   filter: drop-shadow(0 0 14px rgba(217, 184, 114, 0.75));
 }
@@ -322,7 +310,6 @@
   }
 }
 
-/* фишки ставок */
 .bet-chips {
   position: absolute;
   z-index: 2;
@@ -349,11 +336,10 @@
   pointer-events: none;
 }
 
-/* рейз */
 #raise-box {
   display: flex;
-  gap: 8px;
   align-items: center;
+  gap: 8px;
   padding: 5px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--line);
@@ -407,7 +393,6 @@
   border-color: var(--accent);
 }
 
-/* лог */
 #log {
   max-width: 820px;
   height: 110px;
@@ -432,7 +417,6 @@
   border-radius: 3px;
 }
 
-/* комбинации */
 #rank-btn {
   position: fixed;
   left: 14px;
@@ -445,7 +429,6 @@
   color: var(--text);
 }
 
-/* модальные окна */
 #rank-modal,
 #confirm-modal {
   position: fixed;
@@ -494,7 +477,6 @@
   font-weight: 700;
 }
 
-/* диалог */
 .dialog {
   max-width: 360px;
   padding: 24px;
@@ -523,19 +505,16 @@
   min-width: 110px;
 }
 
-/* планшет */
 @media (max-width: 900px) {
   #poker-table {
     width: 94vw;
     border-width: 6px;
     margin-top: 50px;
   }
-
   .seat {
     width: 120px;
     font-size: 12px;
   }
-
   .seat .card {
     width: 36px;
     height: 51px;
@@ -543,85 +522,69 @@
   }
 }
 
-/* мобильный */
 @media (max-width: 700px) {
   #poker-table {
     width: 96vw;
     aspect-ratio: 1.45 / 1;
     margin-top: 35px;
   }
-
   .seat {
     width: 100px;
     font-size: 11px;
   }
-
   .seat .card {
     width: 31px;
     height: 44px;
     font-size: 10px;
   }
-
   .seat .cards .card:first-child {
     transform: rotate(-7deg) translateX(5px);
   }
-
   .seat .cards .card:last-child {
     transform: rotate(7deg) translateX(-5px);
   }
-
   .avatar-wrap {
     width: 30px;
     height: 30px;
   }
-
   .avatar {
     inset: 4px;
     font-size: 9px;
   }
-
   #rank-btn {
     bottom: 160px;
   }
-
   #bet-slider {
     width: 100px;
   }
 }
 
-/* маленький */
 @media (max-width: 480px) {
   #poker-table {
     width: 98vw;
     border-width: 5px;
   }
-
   .seat {
     width: 85px;
     font-size: 10px;
   }
-
   .seat .card {
     width: 27px;
     height: 39px;
     font-size: 9px;
     border-radius: 4px;
   }
-
   .avatar-wrap {
     width: 26px;
     height: 26px;
   }
-
   .avatar {
     inset: 3px;
     font-size: 8px;
   }
-
   .bet-chips span {
     font-size: 9px;
   }
-
   #pot {
     font-size: 16px;
   }
