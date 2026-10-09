@@ -24,7 +24,7 @@ class Player {
 
     // Вносит фишки (не больше стека). Возвращает, сколько внёс.
     putChips(amount) {
-        const paid = Math.min(amount, this.stack);
+        const paid = Math.min(amount, this.stack);//stack-сколько фишек осталось
         this.stack -= paid;
         this.currentBet += paid;
         this.contrib += paid;

@@ -1,0 +1,293 @@
+:root {
+  --accent: #d9b872;
+  --accent-light: #f0dca8;
+  --accent-soft: rgba(217, 184, 114, 0.28);
+  --text: #edf1ee;
+  --muted: rgba(237, 241, 238, 0.62);
+  --glass: rgba(10, 16, 13, 0.7);
+  --stroke: rgba(217, 184, 114, 0.22);
+  --line: rgba(255, 255, 255, 0.1);
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  background: #101312;
+  overflow-x: hidden;
+}
+
+/* фон */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("../img/poker-bg.png") center / cover no-repeat;
+  filter: blur(3px) brightness(0.4) saturate(0.9);
+  transform: scale(1.06);
+}
+
+/* виньетка */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 25%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+}
+
+/* зал */
+body:has(#game-screen:not(.hidden))::before,
+body:has(#bj-screen:not(.hidden))::before {
+  background:
+    radial-gradient(
+      ellipse 60% 55% at 50% 45%,
+      rgba(60, 130, 95, 0.26) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 90% 60% at 50% 0%,
+      rgba(217, 184, 114, 0.12) 0%,
+      transparent 65%
+    ),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><g fill='%23d9b872' fill-opacity='.06' font-family='Georgia,serif' font-size='26'><text x='18' y='42'>♠</text><text x='88' y='42'>♦</text><text x='18' y='112'>♣</text><text x='88' y='112'>♥</text></g></svg>"),
+    linear-gradient(180deg, #0f1613 0%, #0a0d0c 60%, #070908 100%);
+  filter: none;
+  transform: none;
+}
+
+body:has(#game-screen:not(.hidden))::after,
+body:has(#bj-screen:not(.hidden))::after {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 35%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* кнопки */
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition:
+    background 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s,
+    filter 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.13);
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.gold-btn {
+  color: #1a1408;
+  font-weight: 600;
+  background: linear-gradient(180deg, #e6c987 0%, #cfa95e 100%);
+}
+
+/* цвета кнопок */
+#raise-btn,
+.btn-gold {
+  color: #1a1408;
+  background: linear-gradient(180deg, #f3d794 0%, #b48a35 100%);
+}
+
+#fold-btn,
+.btn-red {
+  color: #fff;
+  background: linear-gradient(
+    180deg,
+    rgba(252, 108, 89, 0.92),
+    rgba(170, 59, 47, 0.92)
+  );
+}
+
+#call-btn,
+.btn-green {
+  color: #fff;
+  background: linear-gradient(
+    180deg,
+    rgba(114, 230, 158, 0.94),
+    rgba(42, 121, 79, 0.94)
+  );
+}
+
+#allin-btn,
+.btn-purple {
+  color: #fff;
+  background: linear-gradient(
+    180deg,
+    rgba(114, 75, 214, 0.94),
+    rgba(108, 92, 154, 0.94)
+  );
+}
+
+/* верхняя панель */
+#topbar,
+#bj-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+}
+
+#game-lang,
+#bj-lang {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  outline: none;
+}
+
+#game-lang option,
+#bj-lang option {
+  background: #141816;
+  color: var(--text);
+}
+
+/* нижняя панель */
+#controls,
+#bj-controls {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  background: rgba(13, 16, 15, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#controls button,
+#bj-controls button:not(.bj-chip) {
+  min-width: 100px;
+  min-height: 46px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+#controls button:hover:not(:disabled),
+#bj-controls button:not(.bj-chip):hover:not(:disabled) {
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+/* карты */
+.card {
+  width: 40px;
+  height: 56px;
+  border-radius: 6px;
+  background: #f4f5f2;
+  color: #161a17;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 15px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card.red {
+  color: #b8443c;
+}
+
+.card.back {
+  background: repeating-linear-gradient(
+    45deg,
+    #33413b,
+    #33413b 4px,
+    #28332e 4px,
+    #28332e 8px
+  );
+  border: 2px solid rgba(255, 255, 255, 0.85);
+}
+
+.card.empty {
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+}
+
+/* фишки */
+.chips-svg {
+  display: block;
+  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.5));
+}
+
+/* мобильный */
+@media (max-width: 700px) {
+  #controls,
+  #bj-controls {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  #controls button,
+  #bj-controls button:not(.bj-chip) {
+    min-width: 80px;
+    min-height: 42px;
+    font-size: 14px;
+  }
+
+  .chips-svg {
+    transform: scale(0.8);
+  }
+}
