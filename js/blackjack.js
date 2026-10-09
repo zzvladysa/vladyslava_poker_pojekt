@@ -332,6 +332,5 @@
     };
 
     window.stopBlackjack = clearTimers;
-
     init();
 })();
